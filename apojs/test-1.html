@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>jQuery test 1</title>
+<style>
+li { cursor: pointer; }
+.neutral { color: #ddd; }
+</style>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(".thumbs").sortable({
+    stop: function(event, ui) {
+      //$(this).find('.neutral').appendTo(this);
+      $(".thumbs li").each(function(n) {
+            $(this).attr("id", "link" + n);
+            alert($(this).text());
+      });        
+    }
+});
+</script>
+</head>
+<body>
+<p>
+This is a jQuery sortable list example<br/><br/>
+
+<ul class="thumbs">
+    <li>red</li>
+    <li>green</li>
+    <li class="neutral">none</li>
+    <li>yellow</li>
+    <li>blue</li>
+</ul>
+</p>
+</body>
+</html>
