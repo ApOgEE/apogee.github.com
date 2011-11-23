@@ -13,11 +13,20 @@ li { cursor: pointer; }
 $(document).ready(function(){
 	$(".thumbs").sortable({
 	    stop: function(event, ui) {
+	      var newlist = '';
 	      //$(this).find('.neutral').appendTo(this);
 	      $(".thumbs li").each(function(n) {
 		    $(this).attr("id", "link" + n);
-		    alert($(this).text());
+		    //alert($(this).text() + "\n" + newlist );
+                    if (newlist != '') {
+                        newlist = newlist + "|";
+		    }
+                    newlist = newlist + $(this).text();
 	      });        
+
+	      //alert("nl: " + newlist);
+
+              $("#sortedlist").text("result: " + newlist);
 	    }
 	});
 });
@@ -34,6 +43,8 @@ This is a jQuery sortable list example<br/><br/>
     <li>yellow</li>
     <li>blue</li>
 </ul>
+<br/><br/>
+<span id="sortedlist"></span>
 </p>
 </body>
 </html>
