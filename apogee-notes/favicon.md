@@ -11,6 +11,6 @@ Here is the steps to make one.
 ![APOGEEK GIMP](apogeek_gimp_view.png)
 
 2. Select `File` and `Export As`.
-3. Save As `.ico` file.
+3. Save As `favicon.ico` file.
 
 
